@@ -1,0 +1,37 @@
+body {
+    background-color: black;
+    color: mediumslateblue; 
+    justify-content: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+nav {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+h1 {
+    color: blue;
+    font-family: fantasy;
+    display: flex;
+    justify-content: center;
+}
+
+#answerbutton {
+    height: 100px;
+}
+
+.main {justify-content: center;
+align-items: center
+;}
+
+#high-scores {
+
+
+}
+
+#timer {
+
+
+}
