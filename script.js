@@ -1,3 +1,32 @@
+
+// Make timer
+
+// var timeEl = document.querySelector(".time");
+
+// var secondsLeft = 60;
+
+// function setTime() {
+//   // Sets interval in variable
+//   var timerInterval = setInterval(function() {
+//     secondsLeft--;
+//     timeEl.textContent = secondsLeft + " seconds left to play.";
+
+//     if(secondsLeft === 0) {
+//       // Stops execution of action at set interval
+//       clearInterval(timerInterval);
+//       // Calls function to create and append image
+//       sendMessage();
+//     }
+
+//   }, 1000);
+// }
+
+// // Make timer work
+// playBtn.addEventListener("click", function(event){
+//     timeEl.textContent()
+//     });
+
+
 var questionArray = [
     {
         question: "JavaScript is _______ threaded.", 
@@ -20,8 +49,8 @@ var questionArray = [
         answer1: "It is somewhat equal.",
         answer2: "It is not equal.",
         answer3: "It is the opposite.",
-        answer4: "It is a strictly equal.",
-        correctAnswer: ""
+        answer4: "It is strictly equal.",
+        correctAnswer: "It is strictly equal."
     },
     {
         question: "In Javascript, arrays should be put within", 
@@ -48,72 +77,58 @@ var answer2 = document.querySelector("#answer2");
 var answer3 = document.querySelector("#answer3");
 var answer4 = document.querySelector("#answer4");
 
-answer1.addEventListener("click", function(event){
-    event.preventDefault();
+var answerbutton = document.querySelector(".answerbuttons")
+
+answerbutton.addEventListener("click", function(event){
+    // test if question is correct
+    console.log(event.target.value)
+    if (event.target.value === questionArray[nextQuestion].correctAnswer){
+        console.log("correct") 
+    }
+    
     nextQuestion++
-    console.log(answer1.innerText);
     displayNextQuestion()
 })
 
-answer2.addEventListener("click", function(event){
-    event.preventDefault();
-    nextQuestion++
-    console.log(answer2.innerText);
-    displayNextQuestion()
-})
-
-answer3.addEventListener("click", function(event){
-    event.preventDefault();
-    nextQuestion++
-    console.log(answer3.innerText);
-    displayNextQuestion()
-})
-
-answer4.addEventListener("click", function(event){
-    event.preventDefault();
-    nextQuestion++
-    console.log(answer4.innerText);
-    displayNextQuestion()
-})
 
 function displayNextQuestion(){
     var question = document.querySelector("#question");
     question.innerText =  questionArray[nextQuestion].question;
     answer1.innerText = questionArray[nextQuestion].answer1
-}
-
-function displayNextQuestion(){
-    var question = document.querySelector("#question");
-    question.innerText =  questionArray[nextQuestion].question;
+    answer1.setAttribute("value",questionArray[nextQuestion].answer1)
     answer2.innerText = questionArray[nextQuestion].answer2
-}
-
-function displayNextQuestion(){
-    var question = document.querySelector("#question");
-    question.innerText =  questionArray[nextQuestion].question;
+    answer2.setAttribute("value",questionArray[nextQuestion].answer2)
     answer3.innerText = questionArray[nextQuestion].answer3
-}
-
-function displayNextQuestion(){
-    var question = document.querySelector("#question");
-    question.innerText =  questionArray[nextQuestion].question;
+    answer3.setAttribute("value",questionArray[nextQuestion].answer3)
     answer4.innerText = questionArray[nextQuestion].answer4
+    answer4.setAttribute("value",questionArray[nextQuestion].answer4)
 }
 
 var playBtn = document.querySelector("#play");
 
+
 playBtn.addEventListener("click", function(event){
+playBtn.remove();
 event.preventDefault();    
 displayNextQuestion();
 });
 
-//timer in nav bar
- 
-//button to take to high score page in nav bar
 
-//function to check answer
-//right or wrong if wrong, subtract time; need access to that var in this function; set var for timer globallhy
-//take you to the next ?
+// make the buttons have answers on them 
+// function to check answer
+// make the buttons display 'correct' or 'wrong" possibly using alert box
+// subtract time if score is wrong
+// keep record of how score
 
-//dynanamically change elements dep on what ? user is on 
+// when last answer button is clicked, create field for user to input initials/ name 
+
+// create submit button to take user to high scores page
+
+// button for user to go back to original screen with play button
+
+
+
+
+
+
 
